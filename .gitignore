@@ -1,0 +1,145 @@
+# =============================================================
+# Urban Growth Colombia — .gitignore
+# =============================================================
+# Sube: scripts, SQL, notebooks, config, parquets de resultados,
+#       imágenes docs/, logs CSV, requirements, README.
+# NO sube: datos raster/vectoriales (GB), credenciales, entornos.
+# =============================================================
+
+# ------------------------------------------------------------
+# Credenciales y configuración local
+# ------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# ------------------------------------------------------------
+# Entornos Python
+# ------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+
+# Caché de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Distribuciones / builds
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ------------------------------------------------------------
+# Jupyter
+# ------------------------------------------------------------
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ------------------------------------------------------------
+# Datos raster procesados — demasiado grandes para GitHub
+# (regenerables ejecutando el pipeline completo)
+# ------------------------------------------------------------
+data/processed/clipped/*.tif
+data/processed/clipped/*.ovr
+data/processed/clipped/*.xml
+data/processed/mosaics/*.tif
+data/processed/mosaics/*.ovr
+data/processed/mosaics/*.xml
+data/processed/slope/*.tif
+data/processed/slope/*.ovr
+
+# Tiles GHSL sin recortar (dentro del repo por error)
+*.tif
+*.tiff
+*.ovr
+
+# ------------------------------------------------------------
+# Datos vectoriales procesados — algunos superan 50 MB
+# (regenerables con run_paso0.py + 10_load_vectors_postgis.py)
+# ------------------------------------------------------------
+data/processed/vectors/*.gpkg
+data/processed/vectors/*.shp
+data/processed/vectors/*.shx
+data/processed/vectors/*.dbf
+data/processed/vectors/*.prj
+data/processed/vectors/*.cpg
+data/processed/vectors/*.clr
+
+# Shapefiles sueltos en cualquier carpeta
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.clr
+
+# GeoPackages grandes (runap.gpkg = 65 MB, supera límite GitHub)
+# Excepciones pequeñas se pueden forzar con: git add -f archivo.gpkg
+*.gpkg
+
+# ------------------------------------------------------------
+# Archivos de datos grandes — varios formatos
+# ------------------------------------------------------------
+*.pdf
+*.xlsx
+*.xls
+*.zip
+*.gz
+*.tar
+*.7z
+
+# ------------------------------------------------------------
+# Resultados de análisis — SE SUBEN (pequeños, son el output)
+# ------------------------------------------------------------
+# data/processed/vectors/*.parquet  ← NO ignorar
+# scripts/modulos_analisis/**/m*.parquet  ← NO ignorar
+# data/logs/*.csv  ← NO ignorar
+
+# ------------------------------------------------------------
+# Archivos de sistema operativo
+# ------------------------------------------------------------
+Thumbs.db
+Thumbs.db:encdata
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# ------------------------------------------------------------
+# IDEs y editores
+# ------------------------------------------------------------
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.sublime-project
+*.sublime-workspace
+
+# ------------------------------------------------------------
+# Herramientas geoespaciales — metadatos temporales
+# ------------------------------------------------------------
+*.aux.xml
+*.lyr
+*.mxd
+*.qgs~
+*.qgz.bak
+
+# ------------------------------------------------------------
+# Logs y temporales del pipeline
+# ------------------------------------------------------------
+*.log
+tmp/
+temp/
+scratch/

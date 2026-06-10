@@ -1,0 +1,11 @@
+check_name,status,detail,timestamp
+mosaicos_ghsl_presentes,OK,37/37 presentes,2026-06-09T16:55:42.275729
+mosaico_hansen_presente,OK,C:\Users\GuachetaW\Documents\PROYECTO_2\urban-growth-colombia\data\processed\mosaics\hansen_lossyear_mosaic_4326.tif,2026-06-09T16:55:42.275778
+crs_rasters_clipped,OK,40 rasters revisados | Todos en EPSG:9377 (verificado por WKT),2026-06-09T16:55:44.360380
+resolucion_100m_clipped,OK,40 rasters revisados | Todos a 100m,2026-06-09T16:55:45.830533
+bounds_dentro_colombia,OK,40 revisados,2026-06-09T16:55:47.321437
+built_s_2018_100m,OK,res: 100.00 × 100.00 m (esperado 100m ±1.0m),2026-06-09T16:55:47.333148
+hansen_valores_rango,OK,"min=0, max=25 (esperado 0–25)",2026-06-09T16:55:48.341683
+crs_vectores_9377,OK,4 GPKGs revisados | Todos en EPSG:9377,2026-06-09T16:55:48.491257
+runap_features,OK,1879 áreas protegidas (mínimo esperado: 100),2026-06-09T16:55:48.675094
+ucdb_dentro_colombia,OK,85/85 centros urbanos dentro del límite Colombia,2026-06-09T16:55:48.921776
