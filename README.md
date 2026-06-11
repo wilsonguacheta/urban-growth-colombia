@@ -284,16 +284,6 @@ Los notebooks del análisis pueden ejecutarse con Jupyter Lab tras completar las
 
 ---
 
-## Enlace al repositorio
-
-> ⚠️ Pendiente: agregar URL del repositorio en GitHub.
-
-## Demo / Notebook en línea
-
-> ⚠️ Pendiente: agregar enlace a nbviewer para `notebooks/01_reporte_analisis.ipynb`.
-
----
-
 ## Licencia
 
 Los datos procesados derivan de fuentes abiertas con licencias Creative Commons (GHSL: CC BY 4.0,
