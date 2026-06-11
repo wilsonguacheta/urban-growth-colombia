@@ -67,6 +67,21 @@ def compute_m2() -> pd.DataFrame:
     ).round(3)
     df["densification"] = df["sprawl_index"] < 1.0
 
+    # Índice de sprawl acumulado desde 2000 (base explícita del período analítico).
+    # Mide el ratio total area_construida / crecimiento_poblacional desde 2000 a cada año.
+    # Consistente con los ejes del scatter 2000→2025. NaN para años anteriores a 2000.
+    base_2000 = (
+        df[df["year"] == 2000][["uc_id", "pop_total", "built_area_m2"]]
+        .rename(columns={"pop_total": "pop_base", "built_area_m2": "built_base"})
+    )
+    df = df.merge(base_2000, on="uc_id", how="left")
+    _delta_pop_acum   = (df["pop_total"]     - df["pop_base"])   / df["pop_base"].replace(0, float("nan")) * 100
+    _delta_built_acum = (df["built_area_m2"] - df["built_base"]) / df["built_base"].replace(0, float("nan")) * 100
+    df["sprawl_index_acum"] = (
+        _delta_built_acum / _delta_pop_acum.replace(0, float("nan"))
+    ).clip(0, 3).round(3)
+    df = df.drop(columns=["pop_base", "built_base"])
+
     return df.drop(columns=["pop_prev", "built_prev", "delta_pop_pct", "delta_built_pct"])
 
 

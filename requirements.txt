@@ -15,3 +15,4 @@ jupyterlab>=4.0
 pyarrow>=15.0
 folium>=0.15
 mapclassify>=2.4
+plotly>=6.8
