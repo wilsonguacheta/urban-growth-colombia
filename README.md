@@ -222,12 +222,6 @@ Los notebooks del análisis pueden ejecutarse con Jupyter Lab tras completar las
 - `notebooks/01_reporte_analisis.ipynb` — **Reporte completo** con 6 preguntas analíticas, mapas geoespaciales e índice de vulnerabilidad compuesta
 
 ---
-
-## Capturas del Análisis
-
-> Todas las imágenes se generan ejecutando `notebooks/01_reporte_analisis.ipynb`
-> (Kernel → Restart & Run All) y se guardan automáticamente en `docs/images/`.
-
 ### Mapas geoespaciales
 
 ![Mapa de Colombia con polígonos UCDB coloreados por área construida en 2025 y crecimiento absoluto 2000–2025; escala YlOrRd, ciudades piloto etiquetadas](docs/images/mapa1_crecimiento_urbano.png)
@@ -287,6 +281,16 @@ Los notebooks del análisis pueden ejecutarse con Jupyter Lab tras completar las
 - RUNAP: los polígonos oficiales no siempre reflejan la gestión real en campo
 - Hansen GFC puede incluir pérdida forestal por agricultura o ganadería, no solo urbanización
 - El índice de vulnerabilidad compuesta asigna igual peso a todas las dimensiones
+
+---
+
+## Enlace al repositorio
+
+> ⚠️ Pendiente: agregar URL del repositorio en GitHub.
+
+## Demo / Notebook en línea
+
+> ⚠️ Pendiente: agregar enlace a nbviewer para `notebooks/01_reporte_analisis.ipynb`.
 
 ---
 
